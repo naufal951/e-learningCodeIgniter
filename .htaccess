@@ -1,0 +1,11 @@
+<ifmodule mod_rewrite.c>
+ RewriteEngine On
+ RewriteBase /ci_logiin
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteRule ^(.*)$ /ci_logiin/index.php/$1 [L]
+</ifmodule>
+<ifmodule !mod_rewrite.c>
+ ErrorDocument 404 /ci_logiin/index.php
+</ifmodule>
+ 
